@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		<!--TODO A5 Mapper包括接口和xml文件或接口和注解。这里是xml文件-->
+
+<mapper namespace="mapper.RoleMapper">
+	<!-- 
+	namespace(命名空间):配置接口的全路径
+	select标签：表示要做查询操作
+	id:接口中定义的方法名称
+	resultType:接口中定义的方法的返回值类型
+	parameterType:接口中定义的方法的参数类型
+	#{}：获取给方法参数赋的值
+	 -->
+	<select id="getRoleById" resultType="entity.RoleEntity" parameterType="int">
+		select * from t_role where rid = #{id}
+	</select>
+	
+	<!-- r
+	public int add(User user);
+	public int update(User user);
+	public int deleteById(int id);
+	public List<User> getUserList();
+	 -->
+	 <!-- 
+	 添加
+	 增删改，默认返回int类型
+	  -->
+	<!-- <insert id="add" parameterType="com.qianfeng.entity.User">
+	 	insert into t_user values(null,#{username},#{password})
+	 </insert>-->
+	 
+	 <!-- 修改 -->
+	<!-- <update id="update" parameterType="com.qianfeng.entity.User">
+	 	update t_user set username=#{username},password=#{password} where id =#{id}
+	 </update>-->
+	 
+	 <!-- 删除 -->
+	<!-- <delete id="deleteById" parameterType="int">
+	 	delete from t_user where id = #{id}
+	 </delete>-->
+	 
+	 <!-- 查询集合
+	 	查询集合数据，resultType写的是集合中装的对象的全路径 
+	  -->
+<!--	 <select id="getUserList" resultType="com.qianfeng.entity.User">
+	 	select * from t_user
+	 </select>-->
+</mapper>

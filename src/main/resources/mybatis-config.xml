@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--TODO A2 在mybatis的主配置文件中配置一个数据源，这里可以写多个，选择其中一个-->
+	<environments default="development">	
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://192.168.32.1:3306/1909medical" />
+				<property name="username" value="root" />
+				<property name="password" value="mz666672" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!--TODO A6 配置了xml文件要记得扫描-->
+	<mappers>
+		<!-- 配置xml映射文件 -->
+		<mapper resource="mapper/RoleMapper.xml"/>
+		<!-- 注解方式的映射器 -->
+		<!--<mapper class="com.qianfeng.mapper.UserMapper2"/>-->
+	</mappers>
+</configuration>
