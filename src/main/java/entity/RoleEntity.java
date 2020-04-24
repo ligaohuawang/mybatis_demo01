@@ -1,5 +1,6 @@
 package entity;
 
+
 public class RoleEntity {
 
     private Integer rid;
